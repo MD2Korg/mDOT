@@ -1707,7 +1707,7 @@
 		margin: 0 0 1em 0;
 		font-weight: 500;
 		letter-spacing: 0.25em;
-		text-transform: uppercase;
+		/* text-transform: uppercase;  */
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -3159,9 +3159,9 @@
 						}
 
 		#header.alt {
-			background-color: transparent;
-			border-bottom-color: transparent;
-			color: #ffffff;
+			background-color: #ffffff;
+			border-bottom-color: #eaeaea;
+			color: #777777;
 		}
 
 			#header.alt nav ul li a[href="#menu"]:before {
@@ -3343,7 +3343,7 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/mDOTbanner2.png");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
