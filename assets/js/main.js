@@ -1,5 +1,5 @@
 /*
-	Frequency by Pixelarity
+	Formula by Pixelarity
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 */
@@ -7,30 +7,26 @@
 (function($) {
 
 	skel.breakpoints({
-		xlarge: '(max-width: 1680px)',
-		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
-		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)'
+		xlarge:	'(max-width: 1680px)',
+		large:	'(max-width: 1280px)',
+		medium:	'(max-width: 980px)',
+		small:	'(max-width: 736px)',
+		xsmall:	'(max-width: 480px)'
 	});
 
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body'),
-			$banner = $('#banner'),
-			$header = $('#header');
+			$body = $('body');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
 			$window.on('load', function() {
-				$body.removeClass('is-loading');
+				window.setTimeout(function() {
+					$body.removeClass('is-loading');
+				}, 100);
 			});
-
-		// Touch mode.
-			if (skel.vars.mobile)
-				$body.addClass('is-touch');
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
@@ -43,79 +39,122 @@
 				);
 			});
 
-		// Scrolly links.
-			$('.scrolly').scrolly();
+		// Menu.
+			$('#menu')
+				.append('<a href="#menu" class="close"></a>')
+				.appendTo($body)
+				.panel({
+					visibleClass: 'is-menu-visible',
+					target: $body,
+					delay: 500,
+					hideOnClick: true,
+					hideOnSwipe: true,
+					resetScroll: true,
+					resetForms: true,
+					side: 'right'
+				});
 
-		// Header.
-		// If the header is using "alt" styling and #banner is present, use scrollwatch
-		// to revert it back to normal styling once the user scrolls past the banner.
-			if ($header.hasClass('alt')
-			&&	$banner.length > 0) {
+		// Banner.
+			var $banner = $('#banner'),
+				$header = $('#header');
 
-				$window.on('load', function() {
+			if ($banner.length > 0) {
 
-					$banner.scrollwatch({
-						delay:		0,
-						range:		0.98,
-						anchor:		'top',
-						on:			function() { $header.addClass('alt reveal'); },
-						off:		function() { $header.removeClass('alt'); }
+				// Video check.
+					var video = $banner.data('video');
+
+					if (video)
+						$window.on('load.banner', function() {
+
+							// Disable banner load event (so it doesn't fire again).
+								$window.off('load.banner');
+
+							// Append video if supported.
+								if (!skel.vars.mobile
+								&&	!skel.breakpoint('large').active
+								&&	skel.vars.IEVersion > 9)
+									$banner.append('<video autoplay loop><source src="' + video + '.mp4" type="video/mp4" /><source src="' + video + '.webm" type="video/webm" /></video>');
+
+						});
+
+				// IE: Height fix.
+					if (skel.vars.browser == 'ie'
+					&&	skel.vars.IEVersion > 9) {
+
+						skel.on('-small !small', function() {
+							$banner.css('height', '100vh');
+						});
+
+						skel.on('+small', function() {
+							$banner.css('height', '');
+						});
+
+					}
+
+				// More button.
+					$banner.find('.more')
+						.addClass('scrolly');
+
+				// Header.
+					$header
+						.addClass('with-banner')
+						.addClass('alt');
+
+					$banner.scrollex({
+						mode: 'top',
+						top: '-100vh',
+						bottom: 10,
+						enter: function() { $header.addClass('alt'); },
+						leave: function() { $header.removeClass('alt'); }
 					});
 
-					skel.on('change', function() {
+			}
 
-						if (skel.breakpoint('medium').active)
-							$banner.scrollwatchSuspend();
-						else
-							$banner.scrollwatchResume();
+		// Spotlights.
+			var $spotlight = $('.spotlight');
 
+			if ($spotlight.length > 0
+			&&	skel.canUse('transition'))
+				$spotlight.each(function() {
+
+					var $this = $(this);
+
+					$this.scrollex({
+						mode: 'middle',
+						top: '-10vh',
+						bottom: '-10vh',
+						initialize: function() { $this.addClass('inactive'); },
+						enter: function() { $this.removeClass('inactive'); }
 					});
 
 				});
 
-			}
+		// Features.
+			var $features = $('.features');
 
-		// Dropdowns.
-			$('#nav > ul').dropotron({
-				alignment: 'right',
-				hideDelay: 400
-			});
+			if ($features.length > 0
+			&&	skel.canUse('transition'))
+				$features.each(function() {
 
-		// Off-Canvas Navigation.
+					var $this = $(this);
 
-			// Title Bar.
-				$(
-					'<div id="titleBar">' +
-						'<a href="#navPanel" class="toggle"></a>' +
-						'<span class="title">' + $('#logo').html() + '</span>' +
-					'</div>'
-				)
-					.appendTo($body);
-
-			// Navigation Panel.
-				$(
-					'<div id="navPanel">' +
-						'<nav>' +
-							$('#nav').navList() +
-						'</nav>' +
-					'</div>'
-				)
-					.appendTo($body)
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						side: 'left',
-						target: $body,
-						visibleClass: 'navPanel-visible'
+					$this.scrollex({
+						mode: 'middle',
+						top: '-20vh',
+						bottom: '-20vh',
+						initialize: function() { $this.addClass('inactive'); },
+						enter: function() { $this.removeClass('inactive'); }
 					});
 
-			// Fix: Remove transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#navPanel')
-						.css('transition', 'none');
+				});
+
+		// Scrolly.
+			$('.scrolly').scrolly();
+
+		// Initial scroll.
+			$window.on('load', function() {
+				$window.trigger('scroll');
+			});
 
 	});
 
