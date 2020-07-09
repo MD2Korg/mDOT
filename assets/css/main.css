@@ -1602,7 +1602,7 @@
 		letter-spacing: 0.1em;
 		line-height: 1em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
+	/*	text-transform: uppercase; */
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2630,7 +2630,7 @@
 
 		.wrapper.style2 {
 			background-attachment: scroll, fixed;
-			background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+			background-image: url("images/overlay.png"), url("../../images/mDOTbannernew.png");
 			background-position: center center;
 			background-size: cover;
 			color: #ffffff;
@@ -2915,7 +2915,7 @@
 	#banner {
 		padding: 16em 0 13em 0 ;
 		background-attachment: scroll, fixed;
-		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+		background-image: url("images/overlay.png"), url("../../images/mDOTbannernew.png");
 		background-position: center center;
 		background-size: cover;
 		color: #ffffff;
