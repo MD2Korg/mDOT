@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<!--
+	Frequency by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+-->
+<html>
+	<head>
+		<title>mDOT - TR&D3 (Translation)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="index.html">mDOT</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index3.html">Home</a></li>
+						<li>
+							<a href="index3.html#one">About</a>
+							<ul>
+								<li><a href="vision.html">Vision</a></li>
+								<li><a href="innovation.html">Innovation & Impact</a></li>
+								<li><a href="team.html">Team</a></li>
+								<li><a href="index3.html#contact">Contact</a></li>
+								<!-- <li>
+									<a href="#">Submenu</a>
+									<ul>
+										<li><a href="#">Option 1</a></li>
+										<li><a href="#">Option 2</a></li>
+										<li><a href="#">Option 3</a></li>
+										<li><a href="#">Option 4</a></li>
+									</ul>
+								</li> -->
+							</ul>
+						</li>
+						<li><a href="trdhome.html">TR&D Research Projects</a>
+							<ul>
+								<li><a href="trd1.html">TR&D1 Discovery</a></li>
+								<li><a href="trd2.html">TR&D2 Optimization</a></li>
+								<li><a href="trd3.html">TR&D3 Translation</a></li>
+							</ul>
+						</li>
+						<li><a href="cps.html">Collaborative Projects</a></li>
+						<li><a href="sps.html">Service Projects</a></li>
+						<li><a href="training.html">Training</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper style1">
+				<div class="container box big bordered">
+					<header class="major special" style="margin-bottom: 0;">
+						<h2>TR&D3 (Translation)</h2>
+						 <p>Translation of Temporally Precise mHealth via Efficient and Embeddable Privacy-aware Biomarker Implementations</p>
+					</header>
+
+					<!-- Content -->
+						<section id="content">
+							<!-- <a href="#" class="image main"><img src="images/pic04.jpg" alt="" /></a> -->
+							<p>Vigorous research activity in mHealth has resulted in an ever-growing list of physiological and behavioral markers. However, translation of these biomarkers into real time intervention lagged behind the observational research studies that led to their development due to computation, storage, and communication bottlenecks faced by wearables and smartphone platforms. Further, the next generation of wearables is emerging with the ability to sample data from multiple sensors at rates several orders of magnitude higher than current-generation devices, exacerbating the computational and communication bottleneck. They can image structure, motion, and function, to provide visibility into physiology previously possible only in clinics.</p>
+							<p>Traditionally, such imaging sensors use post-processing algorithms for feature identification, co-registration, alignment and enhancement. However, high frequency-high volume imaging data from wearables cannot be transported to cloud computing for post-processing. Finally, researchers have shown that the high-dimensionality sensor data needed to compute biomarkers present immense privacy risks. Advances in machine learning are leading to an ever-growing list of surprising inferences about user identity and activities that can be made from seemingly innocuous sensors, particularly when data are captured over long durations. Simplistic methods such as stripping personally identifiable information and addition of noise that focus on anonymizing the data have been ineffective for mHealth, both from privacy and utility perspectives, particularly with the availability of vast amounts of side information (e.g. metadata), computational power, and advanced algorithms.</p>
+							<p>To address these growing challenges, we propose a hierarchical computing framework that reduces the data into minimal modular abstractions called Micromarkers computed at the edge devices. Micromarkers can be used directly as features in new biomarker inferences or can be adapted to support legacy algorithms. TR&D3 is developing hardware, software, and computational techniques to implement privacy-aware, efficient, and embedded intelligence support into wearables. They will enable continuous, high-throughput, low latency biomarker captures across wearable, mobile, and cloud platforms to support large scale and long-term research studies, and eventual real-life rollout.</p>
+							<h3 style="margin-top: 25px;">Technological Gaps and mDOT Innovations</h3>
+								<p>A review of the digital biomarker landscape in industry and in open-source projects reveals multiple gaps that mDOT seeks to address via technological innovations. The first gap in realizing temporally-precise mHealth interventions is access to a rich set of mHealth biomarkers. We will pursue the following innovations to address this gap. First, we will develop a hierarchical computing framework for biomarker inferences that is based on reusable-computing blocks dubbed as micromarkers. Second, for new and emerging modalities, we propose to use task-specific learned autoencoder structures to automatically discover micromarker representations from the sensor data. Third, to further minimize the size and computational complexity of biomarker implementations, we adapt well-studied concepts from staged detection and hierarchical sensing, successfully applied in many domains, including surveillance.</p>
+								<p>The second gap regards the power and computing requirements of emerging high rate sensor arrays available at the edge devices. Specifically, power, size and latency considerations do not allow full sampling on sensor arrays embedded into wearables and other edge devices. We will develop novel methods to translate biomarkers developed using benchtop fully sampled sensor arrays to the resource-constrained setting. We will combine techniques from compressive sensing and machine learning to realize layered computation architectures that can be trained end-to-end. First, we will implement a fixed-depth version of iterative signal reconstruction algorithms by unrolling the iterations into a fixed number of layers and optimizing layers independently for fixed depth recovery. Second, we will combine this pre-processor with deep net structures and train the system end-to-end from with subsampled measurements to image-based biomarkers. Third, we will learn optimized dictionaries, and other signal representations based on generative adversarial networks in situ to improve the performance of the end-to-end system.</p>
+								<p>A third gap arises from the inadequate handling of the immense privacy risks presented by the high-dimensional sensor data needed to compute biomarkers. Many researchers have shown that an ever-growing list of surprising inferences about user identity and activities can be made from seemingly innocuous sensors with the help of machine learning algorithms, even when the data have been stripped of obviously personally identifiable information. Additionally, minute variations at the circuit level cause a hardware device to leave unique fingerprints in the data which can be used to link data back to a specific device and its user. These risks are considerably amplified when data are captured over long durations, as is the case in mHealth. As ad hoc privacy measures neither provide assured privacy nor maintain utility of the data, we will pursue the following innovations: We will develop novel principled, cross-layer mechanisms that optimize privacy-utility trade-offs. First, we will develop techniques to provide agency to the participant over the collection and sharing process and use machine learning methods together with a review-and-release mechanism to allow fine-grained control with low burden and minimization of unnecessary loss of data quality. Second, we will develop techniques to transform the shared data via algorithms based on a combination of differential privacy and generative adversarial networks so that privacy is assured while minimizing impact on the quality of inferences and models that the recipient can compute over the data.</p>
+							<h3 style="margin-top: 25px;">Technological Impact</h3>
+								<p>TR&D3 makes it possible for temporally-precise mHealth interventions for maintaining health and managing the growing burden of chronic diseases, to be realized on participants’ personal devices with minimal impact on battery life so as not to interfere with routine usage of these devices. TR&D3 also enables much greater personalization of such interventions by expanding access to many new and emerging biomarkers, resulting in a higher likelihood of continued engagement and improved efficacy. By enabling the computation of novel biomarkers from the next generation of high data rate sensors that provide unprecedented visibility into physiology, previously possible only in clinical settings, TR&D3 enables remote care for patients via mHealth interventions who have traditionally required close involvement of clinicians, marking a major transformation in the care delivery, especially to the neediest. By providing fine-grained and low-burden privacy control to patients over their data being shared with third parties, TR&D3 ensures that the health impact of temporally-precise mHealth interventions is not adversely impacted by privacy concerns.</p>
+						</section>
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+					<img src="images/mdotLogoFade.png" alt="" height="100px;" style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;" />
+					<p class="copyright" style="margin-left:5%; margin-right:5%;">The mHealth Center for Discovery, Optimization & Translation of Temporally-Precise Interventions is supported by the National Institutes of Health's National Institute of Biomedical Imaging and Bioengineering through its Biomedical Technology Resource Centers Program.</p>
+					<p class="copyright">&copy; MD2K. All rights reserved.</p>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
