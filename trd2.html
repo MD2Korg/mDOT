@@ -88,8 +88,36 @@
 							<p>Mobile health (mHealth) interventions have typically used hand-crafted decision rules that map from biomarkers of an individual’s state to the selection of interventions. Recently, reinforcement learning (RL) has emerged as a promising approach for online optimization of decision rules. Continuous, passive detection of the individual’s state using mHealth biomarkers enables dynamic deployment of decision rules at the right moment, i.e., as and when events of interest are detected from sensors. RL-based optimization methods that leverage this new capability created by sensor-based biomarkers, can enable the development and optimization of temporally-precise mHealth interventions, overcoming the significant limitations of static, one-size-fits-all decision rules. Such next generation interventions have the potential to lead to greater treatment efficacy and improved long-term engagement.</p>
 							<p>However, there exist several critical challenges to the realization of effective, real-world RL-based interventions including the need to learn efficiently based on limited interactions with an individual while accounting for longer-term effects of intervention decisions, (i.e., to avoid habituation and ensure continued engagement), and accommodating multiple intervention components operating at different time scales and targeting different outcomes. As a result, the use of RL in mHealth interventions has mostly been limited to very few studies using basic RL methods.</p>
 							<p>To address these critical challenges, TR&D2 builds on more precise biomarkers of context, including TR&D1 risk and engagement scores, to develop, evaluate, and disseminate robust and data efficient RL methods and tools. These methods continually personalize the selection, adaptation and delivery timing decision rules for core intervention components so as to maximize long-term therapeutic efficacy and engagement for every individual.</p>
-							<h3 style="margin-top: 25px;">Innovation</h3>
+
+							<!-- <h3 style="margin-top: 25px;">Innovation</h3>
 								<p>TR&D2 enables a broad segment of the mHealth research community to use online RL algorithms for personalizing mHealth interventions so as to maximize intervention effects and engagement. This project is innovative because the developed personalization algorithms will use models that are interpretable by mHealth intervention scientists. This, along with our track record of strong collaborations with mHealth scientists, will lead to a transformation in the role intervention scientists play in designing and evaluating these algorithms. At this time, such algorithms do not exist. This project tackles these challenges in a novel manner, combining ideas from computer science, behavioral science and statistics.</p>
+							-->
+
+							<h3 style="margin-top: 25px;">Research Goals</h3>
+								<p>TR&D2 is pursuing the following innovative research to address the technological challenges described above:</p>
+									<ul style="padding-left: 30px;">
+										<li>Account for delayed treatment effects via prudent learning of decision rules. Generalize current myopic Bandit RL methods to enable learning non-myopic decision rules that account for delayed intervention effects. A particular focus is delayed effects due to intervention burden.</li>
+										<li>Enable efficient personalization via optimizing data sharing across users. Develop RL methods that personalize decision rules for every individual by optimally leveraging data across a population or cohort to accelerate learning. We will further develop RL methods to facilitate the analysis of the resulting data, taking into account the additional correlation structure that results from partial between-person sharing of data during learning.</li>
+										<li>Enable coherent learning of decision rules across intervention components operating at different time scales and with different objectives. Increasingly, mobile interventions include multiple components targeting different outcomes (e.g., stress, inactivity) and time scales (e.g., within day, daily). TR&D2 will develop approaches to use distal health outcomes to guide learning for these multiple components so as to minimize negative interactions.</li>
+									</ul>
+
+							<h3 style="margin-top: 25px;">Technological Resources</h3>
+								<p>TR&D2 is producing the following technological resources for the community:</p>
+									<ul style="padding-left: 30px;">
+										<li>A toolkit for online intervention optimization. This toolbox will include cloud-based modules for personalizing adaptation rules as well as smartphone modules implementing real-time intervention selection. This system component will be implemented as a cloud-based micro-service that can be flexibly integrated into other existing mobile or cloud-based platforms developed by our collaborators as well as members of the broader research community.</li>
+										<li>A reference tutorial for use of the online intervention optimization toolkit. Both tools will be implemented within the mDOT software framework and will enable a broad segment of the mHealth research community to continuously optimize mHealth intervention rules, so as to achieve optimal efficacy and engagement for individuals despite dynamic variations in the physical, behavioral, social, & environmental states.</li>
+									</ul>
+
+							<h3 style="margin-top: 25px;">Impact on Science & Society</h3>
+								<p>The proposed work in TR&D2 is significant as follows:</p>
+									<ol style="padding-left: 30px;">
+										<li>The proposed work will significantly advance RL methodology for personalizing decision rules; in particular, with regards to online algorithms that personalize interventions for each user by appropriately pooling across multiple users.</li>
+										<li>Through work with our <a href="cps.html">collaborative projects</a> (CPs) and <a href="sps.html">service projects</a> (SPs), TR&D2 will advance the understanding of the impact of personalization via test cases in obesity (<a href="sps.html#sp4">SP4</a>), engagement (<a href="cps.html#cp1">CP1</a>), cigarette smoking (<a href="cps.html#cp1">CP1</a>, <a href="sps.html#sp5">SP5</a>), oral health (<a href="cps.html#cp2">CP2</a>) and physical activity (<a href="cps.html#cp3">CP3</a>); this variety contains interventional components (goal setting/planning and just-in-time support) common to many mHealth interventions.</li>
+										<li>The approaches developed here will be used by our CPs to test whether particular aspects of state arising in dynamic behavioral theories should be intervened on in order to break links between state and adverse health outcomes.</li>
+										<li>TR&D2 will inform intervention research by disseminating software systems and tools that will help to extend behavioral interventions outside of the clinical setting. This is particularly relevant for patients who have limited access to clinics.</li>
+										<li>The personalization methods developed here will lay the groundwork for future projects building longer-term support, both by accommodating user non-stationarity and in maintaining longer-term user engagement. It will help establish the area of Multi-agent RL for mHealth.</li>
+									</ol>
+
 						</section>
 
 				</div>
