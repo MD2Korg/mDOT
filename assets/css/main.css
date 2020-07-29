@@ -1566,7 +1566,7 @@
 		}
 
 	body, input, select, textarea {
-		color: #777;
+		color: #000000;
 		font-family: "Open Sans", Arial, Helvetica, sans-serif;
 		font-size: 13pt;
 		font-weight: 300;
@@ -1859,7 +1859,7 @@
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #777;
+			color: #000000;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2376,7 +2376,7 @@
 			}
 
 			ul.updates .timestamp {
-				color: #777;
+				color: #000000;
 				display: block;
 				font-size: 0.9em;
 				margin-top: 0.5em;
@@ -2769,7 +2769,7 @@
 						-webkit-transition: color 0.2s ease-in-out;
 						-ms-transition: color 0.2s ease-in-out;
 						transition: color 0.2s ease-in-out;
-						color: #777;
+						color: #000000;
 						display: inline-block;
 						text-decoration: none;
 					}
